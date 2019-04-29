@@ -7,5 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-cli": "^2.0.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-if": "^2.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "yargs": "^13.2.2"
+  },
   "license": "MIT"
 }
