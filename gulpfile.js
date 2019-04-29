@@ -8,11 +8,11 @@ const env = require('yargs').argv;
 const gulpif = require('gulp-if');
 
 gulp.task('css', function () {
-	const projectName = env.page;
+	const build = env.build;
 	const willMinify = env.min;
-	return gulp.src(`./${projectName}/html/src/css/main.sass`)
+	return gulp.src(`./docs/src/css/${build}/main.scss`)
 		.pipe(sass.sync().on('error', sass.logError))
 		.pipe(gulpif(willMinify, cssmin()))
-		.pipe(rename(`${projectName}.bundle.css`))
-		.pipe(gulp.dest(`./${projectName}/html/assets/css`));
+		.pipe(rename(`${build}.bundle.css`))
+		.pipe(gulp.dest(`./docs/dist/css`));
 });
