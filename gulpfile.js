@@ -15,7 +15,7 @@ const gulpif = require('gulp-if');
  */
 
 gulp.task('css:w', function() {
-    watch('docs/src/css/**/*.scss', {}, gulp.series('css'))
+    watch('docs/src/css/**/*.scss', {ignoreInitial: false}, gulp.series('css'));
 });
 
 /*
