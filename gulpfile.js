@@ -8,10 +8,21 @@ const rename = require('gulp-rename');
 const env = require('yargs').argv;
 const gulpif = require('gulp-if');
 
+/*
+    запуск как в css, только gulp будет
+    перезапускать сборку, если файлы изменились
+    пример: gulp css:w --build global
+ */
+
 gulp.task('css:w', function() {
     watch('docs/src/css/**/*.scss', {}, gulp.series('css'))
 });
 
+/*
+    запуск единоразовой сборки
+    gulp css --build [имя пакета в src/css/...]
+    пример: gulp css --build global
+ */
 gulp.task('css', function() {
     const build = env.build;
     const willMinify = env.min;
