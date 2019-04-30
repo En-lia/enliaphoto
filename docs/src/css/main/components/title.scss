@@ -1,0 +1,33 @@
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0 10px 0;
+
+
+
+  &__text{
+    color: #a1a1a1;
+    font-size: 22px;
+    margin: 0 50px  0 50px;
+  }
+  &::before{
+    content: '';
+    display: block;
+    flex-grow: 1;
+    height: 2px;
+    width: 30px;
+    background: #a1a1a1;
+  }
+
+  &::after{
+    display: block;
+    content: '';
+    flex-grow: 1;
+    height: 2px;
+    width: 30px;
+    background: #a1a1a1;
+  }
+
+}
+

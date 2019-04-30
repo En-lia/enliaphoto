@@ -1,9 +1,18 @@
 .header{
-  background: pink;
+  background: #fad7d8;
 
   &__container {
-    color: blue;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+
+  }
+  &__link {
+    color: #a1a1a1;
+    font-size: 22px;
+    text-decoration: none;
 
   }
 }
+
 
