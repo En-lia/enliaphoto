@@ -1,5 +1,35 @@
-//@font-face {
-//  font-family: "Caviar Dreams";
-//  src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2"),
-//  url("/fonts/OpenSans-Regular-webfont.woff") format("woff");
-//}
+@font-face {
+  font-family: 'CaviarDreams';
+  src: url('/assets/fonts/caviardreams-webfont.woff2') format('woff2'),
+  url('/assets/fonts/caviardreams-webfont.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/fonts/montserrat-light-webfont.woff2') format('woff2'),
+  url('/assets/fonts/montserrat-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/fonts/Montserrat-Regular.woff2') format('woff2'),
+  url('/assets/fonts/Montserrat-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Reey';
+  src: url('/assets/fonts/reey-regular-webfont.woff2') format('woff2'),
+  url('/assets/fonts/reey-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}

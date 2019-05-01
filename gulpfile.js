@@ -7,6 +7,8 @@ const cssmin = require('gulp-cssmin');
 const rename = require('gulp-rename');
 const env = require('yargs').argv;
 const gulpif = require('gulp-if');
+var browserSync = require('browser-sync').create();
+
 
 /*
     запуск как в css, только gulp будет
@@ -15,7 +17,14 @@ const gulpif = require('gulp-if');
  */
 
 gulp.task('css:w', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./docs"
+        }
+    });
     watch('docs/src/css/**/*.scss', {ignoreInitial: false}, gulp.series('css'));
+    watch("docs/src/css/**/*.scss").on('change', browserSync.reload);
+    watch("docs/**/*.html").on('change', browserSync.reload);
 });
 
 /*
