@@ -1,13 +1,13 @@
 'use strict';
 
 const gulp = require('gulp');
-const { watch } = gulp;
 const sass = require('gulp-sass');
 const cssmin = require('gulp-cssmin');
 const rename = require('gulp-rename');
-const env = require('yargs').argv;
 const gulpif = require('gulp-if');
-var browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync').create();
+const autoprefixer = require('gulp-autoprefixer');
+const env = require('yargs').argv;
 
 
 /*
@@ -22,9 +22,9 @@ gulp.task('css:w', function() {
             baseDir: "./docs"
         }
     });
-    watch('docs/src/css/**/*.scss', {ignoreInitial: false}, gulp.series('css'));
-    watch("docs/src/css/**/*.scss").on('change', browserSync.reload);
-    watch("docs/**/*.html").on('change', browserSync.reload);
+    gulp.watch('docs/src/css/**/*.scss', {ignoreInitial: false}, gulp.series('css'));
+    gulp.watch("docs/src/css/**/*.scss").on('change', browserSync.reload);
+    gulp.watch("docs/**/*.html").on('change', browserSync.reload);
 });
 
 /*
@@ -34,10 +34,14 @@ gulp.task('css:w', function() {
  */
 gulp.task('css', function() {
     const build = env.build;
-    const willMinify = env.min;
+    const isProd = env.prod;
     return gulp.src(`./docs/src/css/${build}/main.scss`)
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(gulpif(willMinify, cssmin()))
+        .pipe(gulpif(isProd, cssmin()))
+        .pipe(gulpif(isProd, autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        })))
         .pipe(rename(`${build}.bundle.css`))
         .pipe(gulp.dest(`./docs/dist/css`));
 });
