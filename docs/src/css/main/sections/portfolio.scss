@@ -1,0 +1,103 @@
+.portfolio {
+    background: #efefef;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    &__content {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    &__item {
+        position: relative;
+        margin: 10px;
+        width: 30%;
+
+
+        &::before {
+            content: "";
+            display: block;
+            margin-top: 100%;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+
+        }
+
+        &_love-story {
+
+            &::after {
+                background-image: url("/assets/img/portfolio__lovestory_background.jpg");
+            }
+
+        }
+
+        &_portraits {
+           &::after{
+               background-image: url("/assets/img/portfolio__portraits_background.jpg");
+           }
+        }
+
+        &_weddings {
+            &::after{
+                background-image: url("/assets/img/portfolio__weddings_background.jpg");
+            }
+        }
+
+        &_maternity {
+            &::after{
+                background-image: url("/assets/img/portfolio__maternity_background.jpg");
+            }
+        }
+
+        &_families {
+            &::after{
+                background-image: url("/assets/img/portfolio__familiess_background.jpg");
+            }
+        }
+
+        &_feeling-lucky {
+            & .portfolio__label_eng {
+                font-size: 30px;
+            }
+        }
+    }
+
+    &__label {
+        text-align: center;
+
+        &_eng {
+            font-family: Reey, sans-serif;
+            line-height: 95px;
+            font-size: 35px;
+        }
+
+        &_rus {
+            font-size: 25px;
+        }
+    }
+}
+
+
