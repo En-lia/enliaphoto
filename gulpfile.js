@@ -7,6 +7,7 @@ const rename = require('gulp-rename');
 const gulpif = require('gulp-if');
 const browserSync = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
+const cssUrlReplace = require('gulp-css-url-adjuster');
 const env = require('yargs').argv;
 
 
@@ -38,6 +39,9 @@ gulp.task('css', function() {
     return gulp.src(`./docs/src/css/${build}/main.scss`)
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulpif(isProd, cssmin()))
+        .pipe(gulpif(isProd, cssUrlReplace({
+            replace:  ['/assets','/photography/assets'],
+        })))
         .pipe(gulpif(isProd, autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false

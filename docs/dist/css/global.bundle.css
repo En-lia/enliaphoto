@@ -1,43 +1,59 @@
 .header {
-  background: #fad7d8; }
-  .header__container {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 10px; }
-  .header__link {
-    color: #a1a1a1;
-    font-size: 20px;
-    text-decoration: none; }
+  background: #fad7d8;
+}
+
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.header__link {
+  color: #a1a1a1;
+  font-size: 20px;
+  text-decoration: none;
+}
 
 .wrapper {
   width: 100%;
   max-width: 1200px;
   padding: 0 20px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 @font-face {
-  font-family: 'CaviarDreams';
-  src: url("/assets/fonts/CaviarDreams.woff2") format("woff2"), url("/assets/fonts/CaviarDreams.woff") format("woff");
+  font-family: CaviarDreams;
+  src: url("/photography/assets/fonts/CaviarDreams.woff2") format("woff2"),url("/photography/assets/fonts/CaviarDreams.woff") format("woff");
   font-weight: 400;
   font-display: swap;
-  font-style: normal; }
+  font-style: normal;
+}
 
 @font-face {
-  font-family: 'Reey';
-  src: url("/assets/fonts/reey-regular-webfont.woff2") format("woff2"), url("/assets/fonts/reey-regular-webfont.woff") format("woff");
+  font-family: Reey;
+  src: url("/photography/assets/fonts/reey-regular-webfont.woff2") format("woff2"),url("/photography/assets/fonts/reey-regular-webfont.woff") format("woff");
   font-weight: 400;
   font-display: swap;
-  font-style: normal; }
+  font-style: normal;
+}
 
 .separator {
-  padding-bottom: 245px; }
+  padding-bottom: 245px;
+}
 
 * {
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  outline: none; }
+  outline: 0;
+}
 
 body {
-  font-family: CaviarDreams, sans-serif;
-  font-weight: 400; }
+  font-family: CaviarDreams,sans-serif;
+  font-weight: 400;
+}
