@@ -31,21 +31,35 @@ gulp.task('css:w', function() {
 /*
     запуск единоразовой сборки
     gulp css --build [имя пакета в src/css/...]
-    пример: gulp css --build global
+    пример: gulp css --build global --prod
+
+    Добавляй --prod при сборке перед выгрузкой
  */
 gulp.task('css', function() {
     const build = env.build;
     const isProd = env.prod;
+    // берет scss файл с которого начинает сборку
     return gulp.src(`./docs/src/css/${build}/main.scss`)
+        // собирает scss в css
         .pipe(sass.sync().on('error', sass.logError))
+
+        // [если prod ] -> минифицирует полученный css
         .pipe(gulpif(isProd, cssmin()))
+
+        // [если prod ] -> поправляет относительные пути к файлам (шрифты/картинки итп)
         .pipe(gulpif(isProd, cssUrlReplace({
             replace:  ['/assets','/photography/assets'],
         })))
+
+        // [если prod ] -> ставит префиксы (улучшает кроссбраузерность)
         .pipe(gulpif(isProd, autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         })))
+
+        // Переименовывает файл
         .pipe(rename(`${build}.bundle.css`))
+
+        // Кладет собранный файл в дист
         .pipe(gulp.dest(`./docs/dist/css`));
 });
