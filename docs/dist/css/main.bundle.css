@@ -1,0 +1,90 @@
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 10px 0; }
+  .title__text {
+    color: #a1a1a1;
+    font-size: 22px;
+    margin: 0 30px  0 30px; }
+  .title::before {
+    content: '';
+    display: block;
+    flex-grow: 1;
+    height: 1px;
+    width: 30px;
+    background: #a1a1a1; }
+  .title::after {
+    display: block;
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    width: 30px;
+    background: #a1a1a1; }
+
+.portfolio {
+  background: #efefef;
+  padding-bottom: 20px; }
+  .portfolio__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; }
+  .portfolio__content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1; }
+  .portfolio__item {
+    position: relative;
+    margin: 10px;
+    width: 30%; }
+    .portfolio__item::before {
+      content: "";
+      display: block;
+      margin-top: 100%; }
+    .portfolio__item::after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.6; }
+    .portfolio__item_love-story::after {
+      background-image: url("/assets/img/portfolio__lovestory_background.jpg"); }
+    .portfolio__item_portraits::after {
+      background-image: url("/assets/img/portfolio__portraits_background.jpg"); }
+    .portfolio__item_weddings::after {
+      background-image: url("/assets/img/portfolio__weddings_background.jpg"); }
+    .portfolio__item_maternity::after {
+      background-image: url("/assets/img/portfolio__maternity_background.jpg"); }
+    .portfolio__item_families::after {
+      background-image: url("/assets/img/portfolio__familiess_background.jpg"); }
+    .portfolio__item_feeling-lucky .portfolio__label_eng {
+      font-size: 30px; }
+  .portfolio__label {
+    text-align: center; }
+    .portfolio__label_eng {
+      font-family: Reey, sans-serif;
+      line-height: 95px;
+      font-size: 35px; }
+    .portfolio__label_rus {
+      font-size: 25px; }
+
+.about-me__avatar {
+  background-image: url("/assets/img/portfolio__lovestory_background.jpg");
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  clip-path: circle(50%);
+  shape-outside: circle(50%); }
