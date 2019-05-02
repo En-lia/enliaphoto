@@ -1,0 +1,12 @@
+.about-me {
+
+    &__avatar {
+        background-image: url("/assets/img/portfolio__lovestory_background.jpg");
+        width: 100px;
+        height:100px;
+        background-size: cover;
+        background-position: center;
+        clip-path: circle(50%);
+        shape-outside: circle(50%);
+    }
+}
