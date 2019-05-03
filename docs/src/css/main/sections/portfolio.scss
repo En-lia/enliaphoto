@@ -7,6 +7,7 @@
         justify-content: space-between;
         align-items: flex-start;
         flex-wrap: wrap;
+        margin: 0 -10px;
     }
 
     &__content {
@@ -56,30 +57,34 @@
         }
 
         &_portraits {
-           &::after{
-               background-image: url("/assets/img/portfolio__portraits_background.jpg");
-           }
+            &::after {
+                background-image: url("/assets/img/portfolio__portraits_background.jpg");
+            }
         }
 
         &_weddings {
-            &::after{
+            &::after {
                 background-image: url("/assets/img/portfolio__weddings_background.jpg");
             }
         }
 
         &_maternity {
-            &::after{
+            &::after {
                 background-image: url("/assets/img/portfolio__maternity_background.jpg");
             }
         }
 
         &_families {
-            &::after{
+            &::after {
                 background-image: url("/assets/img/portfolio__familiess_background.jpg");
             }
         }
 
         &_feeling-lucky {
+            &::after {
+                background: white;
+            }
+
             & .portfolio__label_eng {
                 font-size: 30px;
             }

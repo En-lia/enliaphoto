@@ -1,12 +1,29 @@
 .about-me {
+    &__container {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        align-items: center;
+    }
 
     &__avatar {
-        background-image: url("/assets/img/portfolio__lovestory_background.jpg");
-        width: 100px;
-        height:100px;
+        background-image: url("/assets/img/about-me__avatar.jpg");
+        min-width: 200px;
+        height: 200px;
         background-size: cover;
         background-position: center;
-        clip-path: circle(50%);
-        shape-outside: circle(50%);
+        margin: 0 20px;
+        //clip-path: circle(50%);
+    }
+
+    &__text {
+        max-width: 30%;
+        &_eng {
+    text-align: right;
+        }
+    }
+
+    &__text-line {
+        margin-top: 20px;
     }
 }

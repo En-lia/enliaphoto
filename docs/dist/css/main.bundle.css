@@ -1,150 +1,106 @@
 .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  padding: 20px 0 10px;
-}
-
-.title::after,
-.title::before {
-  display: block;
-  content: '';
-  height: 1px;
-  width: 30px;
-  background: #a1a1a1;
-}
-
-.title__text {
-  color: #a1a1a1;
-  font-size: 22px;
-  margin: 0 30px;
-}
-
-.title::after,
-.title::before {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
+  padding: 20px 0 10px 0; }
+  .title__text {
+    color: #a1a1a1;
+    font-size: 22px;
+    margin: 0 30px  0 30px; }
+  .title::before {
+    content: '';
+    display: block;
+    flex-grow: 1;
+    height: 1px;
+    width: 30px;
+    background: #a1a1a1; }
+  .title::after {
+    display: block;
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    width: 30px;
+    background: #a1a1a1; }
 
 .portfolio {
   background: #efefef;
-  padding-bottom: 20px;
-}
+  padding-bottom: 20px; }
+  .portfolio__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 -10px; }
+  .portfolio__content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1; }
+  .portfolio__item {
+    position: relative;
+    margin: 10px;
+    width: 30%; }
+    .portfolio__item::before {
+      content: "";
+      display: block;
+      margin-top: 100%; }
+    .portfolio__item::after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.6; }
+    .portfolio__item_love-story::after {
+      background-image: url("/assets/img/portfolio__lovestory_background.jpg"); }
+    .portfolio__item_portraits::after {
+      background-image: url("/assets/img/portfolio__portraits_background.jpg"); }
+    .portfolio__item_weddings::after {
+      background-image: url("/assets/img/portfolio__weddings_background.jpg"); }
+    .portfolio__item_maternity::after {
+      background-image: url("/assets/img/portfolio__maternity_background.jpg"); }
+    .portfolio__item_families::after {
+      background-image: url("/assets/img/portfolio__familiess_background.jpg"); }
+    .portfolio__item_feeling-lucky::after {
+      background: white; }
+    .portfolio__item_feeling-lucky .portfolio__label_eng {
+      font-size: 30px; }
+  .portfolio__label {
+    text-align: center; }
+    .portfolio__label_eng {
+      font-family: Reey, sans-serif;
+      line-height: 95px;
+      font-size: 35px; }
+    .portfolio__label_rus {
+      font-size: 25px; }
 
-.about-me__avatar,
-.portfolio__item::after {
-  background-size: cover;
-  background-position: center;
-}
-
-.portfolio__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.about-me__container {
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.portfolio__content {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
-}
-
-.portfolio__item::after,
-.portfolio__item::before {
-  content: "";
-  display: block;
-}
-
-.portfolio__item {
-  position: relative;
-  margin: 10px;
-  width: 30%;
-}
-
-.portfolio__item::before {
-  margin-top: 100%;
-}
-
-.portfolio__item::after {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  opacity: .6;
-}
-
-.portfolio__item_love-story::after {
-  background-image: url("/photography/assets/img/portfolio__lovestory_background.jpg");
-}
-
-.portfolio__item_portraits::after {
-  background-image: url("/photography/assets/img/portfolio__portraits_background.jpg");
-}
-
-.portfolio__item_weddings::after {
-  background-image: url("/photography/assets/img/portfolio__weddings_background.jpg");
-}
-
-.portfolio__item_maternity::after {
-  background-image: url("/photography/assets/img/portfolio__maternity_background.jpg");
-}
-
-.portfolio__item_families::after {
-  background-image: url("/photography/assets/img/portfolio__familiess_background.jpg");
-}
-
-.portfolio__item_feeling-lucky .portfolio__label_eng {
-  font-size: 30px;
-}
-
-.portfolio__label {
-  text-align: center;
-}
-
-.portfolio__label_eng {
-  font-family: Reey,sans-serif;
-  line-height: 95px;
-  font-size: 35px;
-}
-
-.portfolio__label_rus {
-  font-size: 25px;
-}
+  padding: 20px 0;
+  align-items: center; }
 
 .about-me__avatar {
-  background-image: url("/photography/assets/img/portfolio__lovestory_background.jpg");
-  width: 100px;
-  height: 100px;
-  -webkit-clip-path: circle(50%);
-  clip-path: circle(50%);
-  shape-outside: circle(50%);
-}
+  background-image: url("/assets/img/about-me__avatar.jpg");
+  min-width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  margin: 0 20px; }
+
+.about-me__text {
+  max-width: 30%; }
+  .about-me__text_eng {
+    text-align: right; }
+
+.about-me__text-line {
+  margin-top: 20px; }
