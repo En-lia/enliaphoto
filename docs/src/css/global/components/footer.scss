@@ -1,0 +1,16 @@
+.footer {
+    background: url("/assets/img/footer__background.jpg") bottom/cover;
+
+    &__container {
+        height: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    &__content {
+        color: #a1a1a1;
+        font-size: 15px;
+        padding-bottom: 20px;
+    }
+}

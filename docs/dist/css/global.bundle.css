@@ -1,9 +1,21 @@
+.footer {
+  background: url("/assets/img/footer__background.jpg") bottom/cover; }
+  .footer__container {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; }
+  .footer__content {
+    color: #a1a1a1;
+    font-size: 15px;
+    padding-bottom: 20px; }
+
 .header {
   background: #fad7d8; }
   .header__container {
     display: flex;
     justify-content: space-between;
-    padding: 10px 10px; }
+    padding: 10px 0; }
   .header__link {
     color: #a1a1a1;
     font-size: 20px;

@@ -1,23 +1,33 @@
 .about-me {
     &__container {
-        display: flex;
-        justify-content: center;
-        padding: 20px 0;
-        align-items: center;
+       padding: 20px 0;
+
+        &_clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
     }
 
     &__avatar {
         background-image: url("/assets/img/about-me__avatar.jpg");
-        min-width: 200px;
-        height: 200px;
+        min-width: 250px;
+        height: 250px;
         background-size: cover;
         background-position: center;
-        margin: 0 20px;
-        //clip-path: circle(50%);
+        margin-right: 30px;
+        float:left;
+        shape-outside: circle(50%);
+
     }
 
     &__text {
-        height: 200px;
+        //max-width: 50%;
+
+        &_eng {
+            text-align: right;
+        }
     }
 
     &__text-line {
