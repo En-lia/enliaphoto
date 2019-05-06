@@ -20,12 +20,13 @@ const env = require('yargs').argv;
 gulp.task('css:w', function() {
     browserSync.init({
         server: {
-            baseDir: "./docs"
+            baseDir: './docs'
         }
     });
-    gulp.watch('docs/src/css/**/*.scss', {ignoreInitial: false}, gulp.series('css'));
-    gulp.watch("docs/src/css/**/*.scss").on('change', browserSync.reload);
-    gulp.watch("docs/**/*.html").on('change', browserSync.reload);
+    gulp.watch('docs/src/css/**/*.scss', { ignoreInitial: false }, gulp.series('css'));
+
+    gulp.watch('docs/dist/css/**/*.css').on('change', browserSync.reload);
+    gulp.watch('docs/**/*.html').on('change', browserSync.reload);
 });
 
 /*
@@ -40,15 +41,12 @@ gulp.task('css', function() {
     const isProd = env.prod;
     // берет scss файл с которого начинает сборку
     return gulp.src(`./docs/src/css/${build}/main.scss`)
-        // собирает scss в css
+    // собирает scss в css
         .pipe(sass.sync().on('error', sass.logError))
-
-        // [если prod ] -> минифицирует полученный css
-        .pipe(gulpif(isProd, cssmin()))
 
         // [если prod ] -> поправляет относительные пути к файлам (шрифты/картинки итп)
         .pipe(gulpif(isProd, cssUrlReplace({
-            replace:  ['/assets','/photography/assets'],
+            replace: ['/assets', '/photography/assets'],
         })))
 
         // [если prod ] -> ставит префиксы (улучшает кроссбраузерность)
@@ -57,9 +55,12 @@ gulp.task('css', function() {
             cascade: false
         })))
 
+        // [если prod ] -> минифицирует полученный css
+        .pipe(gulpif(isProd, cssmin()))
+
         // Переименовывает файл
         .pipe(rename(`${build}.bundle.css`))
 
         // Кладет собранный файл в дист
-        .pipe(gulp.dest(`./docs/dist/css`));
+        .pipe(gulp.dest(`./docs/dist/css`))
 });
