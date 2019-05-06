@@ -24,7 +24,8 @@ gulp.task('css:w', function() {
         }
     });
     gulp.watch('docs/src/css/**/*.scss', { ignoreInitial: false }, gulp.series('css'));
-    gulp.watch('docs/src/css/**/*.scss').on('change', browserSync.reload);
+
+    gulp.watch('docs/dist/css/**/*.css').on('change', browserSync.reload);
     gulp.watch('docs/**/*.html').on('change', browserSync.reload);
 });
 
@@ -61,5 +62,5 @@ gulp.task('css', function() {
         .pipe(rename(`${build}.bundle.css`))
 
         // Кладет собранный файл в дист
-        .pipe(gulp.dest(`./docs/dist/css`));
+        .pipe(gulp.dest(`./docs/dist/css`))
 });
