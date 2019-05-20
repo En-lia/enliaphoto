@@ -11,7 +11,9 @@
     padding-bottom: 20px; }
 
 .header {
-  background: #fad7d8; }
+  background-image: url("/assets/img/header__background.png");
+  background-size: cover;
+  background-position: center; }
   .header__container {
     display: flex;
     justify-content: space-between;

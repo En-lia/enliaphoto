@@ -1,0 +1,45 @@
+.contacts {
+    &__container {
+        display: flex;
+        justify-content: center;
+        padding: 40px 0;
+
+    }
+
+    &__icon {
+
+        &::before {
+            content: "";
+            display: block;
+            background-size: cover;
+            background-position: center;
+            height: 35px;
+            width: 35px;
+            opacity: 0.8;
+        }
+
+        &_instagram{
+            &::before{
+                background-image: url("/assets/img/contacts__instagram.png");
+            }
+
+
+        }
+
+
+        &_vk{
+            padding-left: 30px;
+
+            &::before {
+                background-image: url("/assets/img/contacts__vk.png");
+            }
+
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+}
