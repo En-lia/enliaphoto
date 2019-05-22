@@ -1,4 +1,17 @@
 .separator{
   padding-bottom: 245px;
-
+&__container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+  &__logo{
+    background-image: url("/assets/img/header__logo_part2.png");
+    background-size: cover;
+    background-position: center;
+    height:180px;
+    width:175px;
+    position: absolute;
+    top: 46px;
+  }
 }

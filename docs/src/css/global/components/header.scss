@@ -7,13 +7,29 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 15px 0;
+    position: relative;
   }
   &__link {
     color: #a1a1a1;
     font-size: 20px;
     text-decoration: none;
 
+  }
+  &__logo {
+    width:140px;
+
+    &::before{
+      content: "";
+      display: block;
+      height:100px;
+      width:155px;
+      background-image: url("/assets/img/header__logo_part1.png");
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 5px;
+    }
   }
 }
 
