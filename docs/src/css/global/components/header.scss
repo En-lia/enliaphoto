@@ -1,13 +1,13 @@
 .header{
-  background-image: url("/assets/img/header__background.png");
+  background-image: url("/assets/img/header__background_whatercolor.png");
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
 
 
   &__container {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
+    padding: 15px 0 25px 0;
     position: relative;
   }
   &__link {
