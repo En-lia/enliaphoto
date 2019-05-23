@@ -17,14 +17,14 @@
   .header__container {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0 25px 0;
-    position: relative; }
+    padding: 15px 0 25px 0; }
   .header__link {
     color: #a1a1a1;
     font-size: 20px;
     text-decoration: none; }
   .header__logo {
-    width: 140px; }
+    width: 155px;
+    position: relative; }
     .header__logo::before {
       content: "";
       display: block;
@@ -34,7 +34,7 @@
       background-size: cover;
       background-position: center;
       position: absolute;
-      top: 5px; }
+      top: -10px; }
     .header__logo::after {
       content: "";
       display: block;
@@ -44,8 +44,8 @@
       background-size: cover;
       background-position: center;
       position: absolute;
-      top: 100px;
-      left: 300px; }
+      top: 85px;
+      right: 0; }
 
 .wrapper {
   width: 100%;
