@@ -44,7 +44,9 @@
   .portfolio__item {
     position: relative;
     margin: 10px;
-    width: 30%; }
+    width: 30%;
+    text-decoration: none;
+    color: black; }
     .portfolio__item::before {
       content: "";
       display: block;
@@ -118,7 +120,7 @@
   justify-content: center;
   padding: 40px 0; }
 
-.contacts__icon::before {
+.contacts__icon {
   content: "";
   display: block;
   background-size: cover;
@@ -126,14 +128,10 @@
   height: 35px;
   width: 35px;
   opacity: 0.8; }
-
-.contacts__icon_instagram::before {
-  background-image: url("/assets/img/contacts__instagram.png"); }
-
-.contacts__icon_vk {
-  padding-left: 30px; }
-  .contacts__icon_vk::before {
+  .contacts__icon:hover {
+    opacity: 1; }
+  .contacts__icon_instagram {
+    background-image: url("/assets/img/contacts__instagram.png"); }
+  .contacts__icon_vk {
+    margin-left: 30px;
     background-image: url("/assets/img/contacts__vk.png"); }
-
-.contacts__icon:hover::before {
-  opacity: 1; }

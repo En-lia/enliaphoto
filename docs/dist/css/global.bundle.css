@@ -35,6 +35,17 @@
       background-position: center;
       position: absolute;
       top: 5px; }
+    .header__logo::after {
+      content: "";
+      display: block;
+      height: 180px;
+      width: 175px;
+      background-image: url("/assets/img/header__logo_part2.png");
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 100px;
+      left: 300px; }
 
 .wrapper {
   width: 100%;
@@ -62,14 +73,6 @@
     display: flex;
     justify-content: center;
     position: relative; }
-  .separator__logo {
-    background-image: url("/assets/img/header__logo_part2.png");
-    background-size: cover;
-    background-position: center;
-    height: 180px;
-    width: 175px;
-    position: absolute;
-    top: 37px; }
 
 * {
   padding: 0;
