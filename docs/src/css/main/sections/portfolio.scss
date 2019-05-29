@@ -54,8 +54,15 @@
 
         }
 
-        &:hover .portfolio__label{
-            text-shadow: 3px 3px 6px white, -3px -3px 6px white;
+        &:hover .portfolio__label {
+            text-shadow: 1px 1px 3px white,
+            -1px -1px 3px white,
+            3px 3px 6px white,
+            -3px -3px 6px white,
+            4px 4px 10px white,
+            -4px -4px 10px white,
+            10px 10px 15px white,
+            -10px -10px 15px white;
         }
         &_love-story {
 
