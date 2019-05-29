@@ -1,0 +1,98 @@
+.header-mobile{
+    display:none;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        padding: 15px 0 15px 0;
+        align-items: center;
+}
+    &__menu{
+        display: flex;
+        flex-direction: column;
+        border:1px solid #a1a1a1;
+        padding: 10px 20px 0 20px;
+
+    }
+
+    &__menu-icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border:1px solid #a1a1a1;
+        width: 42px;
+        height: 42px;
+        margin-right: 5%;
+        position: relative;
+        padding: 0 5px;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 55px;
+            width: 80px;
+            background-image: url("/assets/img/header-mobile__menu-icon.png");
+            background-size: cover;
+            background-position: center;
+            top: -8px;
+            right: -22px;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+    }
+    &__icon-line {
+        width: 100%;
+        height: 5px;
+        background: white;
+        border-radius: 5px;
+
+        &:nth-child(2){
+            margin: 5px 0;
+        }
+    }
+
+
+    &__link {
+        color: #a1a1a1;
+        font-size: 16px;
+        text-decoration: none;
+        border:1px solid #a1a1a1;
+        padding: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        position: relative;
+
+        &::before{
+            content: "";
+            display: block;
+            height:42px;
+            width:135px;
+            background-image: url("/assets/img/header-mobile__menu_backround.png");
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 2px;
+            right: -10px;
+            z-index: -1;
+            opacity: 0.8;
+        }
+    }
+    &__logo {
+        height:170px;
+        width:115px;
+        background-image: url("/assets/img/header__logo_full.png");
+        background-size: cover;
+        background-position: center;
+
+    }
+}
+
+
+@media (max-width: 690px) {
+    .header-mobile {
+        display: block;
+    }
+}

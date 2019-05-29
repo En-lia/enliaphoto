@@ -74,21 +74,10 @@
 
 @media (max-width: 690px) {
   .header{
-    &__logo {
-      width:135px;
 
-      &::before{
-        height:90px;
-        width:135px;
-        top: -10px;
-      }
 
-      &::after{
-        height:160px;
-        width:155px;
-        top: 75px;
-        right: 0;
-      }
+    &__container {
+      display:none;
     }
   }
 }
