@@ -22,6 +22,12 @@
     width: 30px;
     background: #a1a1a1; }
 
+@media (max-width: 950px) {
+  .title__text {
+    color: #a1a1a1;
+    font-size: 18px;
+    margin: 0 20px 0 20px; } }
+
 .portfolio {
   background: #efefef;
   padding-bottom: 20px; }
@@ -62,6 +68,11 @@
       background-size: cover;
       background-position: center;
       opacity: 0.6; }
+    .portfolio__item:hover::after {
+      opacity: 1;
+      cursor: pointer; }
+    .portfolio__item:hover .portfolio__label {
+      text-shadow: 3px 3px 6px white, -3px -3px 6px white; }
     .portfolio__item_love-story::after {
       background-image: url("/assets/img/portfolio__lovestory_background.jpg"); }
     .portfolio__item_portraits::after {
@@ -84,6 +95,40 @@
       font-size: 35px; }
     .portfolio__label_rus {
       font-size: 25px; }
+
+@media (max-width: 950px) {
+  .portfolio__label_eng {
+    line-height: 55px;
+    font-size: 25px; }
+  .portfolio__label_rus {
+    font-size: 20px; }
+  .portfolio__item_feeling-lucky .portfolio__label_eng {
+    font-size: 22px; } }
+
+@media (max-width: 690px) {
+  .portfolio__item {
+    width: 45%; }
+    .portfolio__item_portraits {
+      order: 1; }
+    .portfolio__item_weddings {
+      order: 2; }
+    .portfolio__item_maternity {
+      order: 1; }
+    .portfolio__item_families {
+      order: 2; }
+    .portfolio__item_feeling-lucky {
+      order: 2; } }
+
+@media (max-width: 400px) {
+  .portfolio__label_eng {
+    line-height: 55px;
+    font-size: 20px; }
+  .portfolio__label_rus {
+    font-size: 15px; }
+  .portfolio__item {
+    width: 43%; }
+    .portfolio__item_feeling-lucky .portfolio__label_eng {
+      font-size: 15px; } }
 
 .about-me__container {
   padding: 20px 0;

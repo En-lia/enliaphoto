@@ -29,7 +29,6 @@
         text-decoration: none;
         color: black;
 
-
         &::before {
             content: "";
             display: block;
@@ -47,9 +46,17 @@
             background-size: cover;
             background-position: center;
             opacity: 0.6;
+        }
+
+        &:hover::after{
+            opacity: 1;
+            cursor:pointer;
 
         }
 
+        &:hover .portfolio__label{
+            text-shadow: 3px 3px 6px white, -3px -3px 6px white;
+        }
         &_love-story {
 
             &::after {
@@ -105,10 +112,89 @@
         &_rus {
             font-size: 25px;
         }
+
     }
 }
 
 
 @media (max-width: 950px) {
 
+    .portfolio {
+        &__label {
+            &_eng {
+                line-height: 55px;
+                font-size: 25px;
+            }
+
+            &_rus {
+                font-size: 20px;
+            }
+        }
+
+        &__item {
+            &_feeling-lucky {
+                & .portfolio__label_eng {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 690px) {
+
+    .portfolio {
+        &__item {
+            width: 45%;
+
+            &_portraits {
+                order: 1;
+            }
+
+            &_weddings {
+                order: 2;
+            }
+
+            &_maternity {
+                order: 1;
+            }
+
+            &_families {
+                order: 2;
+            }
+
+            &_feeling-lucky {
+                order: 2;
+
+            }
+        }
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .portfolio {
+        &__label {
+            &_eng {
+                line-height: 55px;
+                font-size: 20px;
+            }
+
+            &_rus {
+                font-size: 15px;
+            }
+        }
+
+        &__item {
+            width: 43%;
+
+            &_feeling-lucky {
+                & .portfolio__label_eng {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
 }
