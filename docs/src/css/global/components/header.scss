@@ -49,6 +49,46 @@
 
 
 @media (max-width: 950px) {
+  .header{
+    &__link {
+      font-size: 18px;
+    }
+    &__logo {
+      width:135px;
 
+      &::before{
+        height:90px;
+        width:135px;
+        top: -10px;
+      }
 
+      &::after{
+        height:160px;
+        width:155px;
+        top: 75px;
+        right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 690px) {
+  .header{
+    &__logo {
+      width:135px;
+
+      &::before{
+        height:90px;
+        width:135px;
+        top: -10px;
+      }
+
+      &::after{
+        height:160px;
+        width:155px;
+        top: 75px;
+        right: 0;
+      }
+    }
+  }
 }

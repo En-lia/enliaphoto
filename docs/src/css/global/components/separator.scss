@@ -7,3 +7,10 @@
     position: relative;
   }
 }
+
+
+@media (max-width: 950px) {
+  .separator {
+    padding-bottom: 215px;
+  }
+}
