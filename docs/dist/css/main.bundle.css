@@ -135,6 +135,10 @@
   display: flex;
   justify-content: center;
   align-items: center; }
+  .about-me__container_active:hover .about-me__avatar {
+    margin-right: 30px; }
+  .about-me__container_active:hover .about-me__text {
+    display: block; }
 
 .about-me__avatar {
   background-image: url("/assets/img/about-me__avatar.jpg");
@@ -149,6 +153,17 @@
 
 .about-me__text-line {
   margin-top: 20px; }
+
+.about-me__container:hover .animation {
+  animation-name: move-left;
+  animation-duration: 3s;
+  animation-fill-mode: forwards; }
+
+@keyframes move-left {
+  50% {
+    transform: translateX(-5%); }
+  100% {
+    transform: translateX(-5%); } }
 
 .price {
   background: #efefef;
