@@ -7,16 +7,26 @@
         align-items: center;
 }
     &__menu-icon{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        border:1px solid #a1a1a1;
-        width: 42px;
-        height: 42px;
-        margin-left: 10px;
-        position: relative;
-        padding: 0 5px;
+        background-image: url("/assets/img/header-mobile__menu-icon.png");
+        background-size: cover;
+        background-position: center;
+        height: 55px;
+        width: 80px;
+
+
+        &-content{
+            border:1px solid #a1a1a1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 42px;
+            height: 42px;
+            margin-left: 10px;
+            position: relative;
+            padding: 0 5px;
+
+        }
 
         &_active{
             margin-left: 200px;
@@ -24,20 +34,20 @@
 
         }
 
-        &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            height: 55px;
-            width: 80px;
-            background-image: url("/assets/img/header-mobile__menu-icon.png");
-            background-size: cover;
-            background-position: center;
-            top: -8px;
-            right: -22px;
-            z-index: -1;
-            opacity: 0.8;
-        }
+        //&::before {
+        //    content: "";
+        //    display: block;
+        //    position: absolute;
+        //    height: 55px;
+        //    width: 80px;
+        //    background-image: url("/assets/img/header-mobile__menu-icon.png");
+        //    background-size: cover;
+        //    background-position: center;
+        //    top: -8px;
+        //    right: -22px;
+        //    z-index: -1;
+        //    opacity: 0.8;
+        //}
     }
 
     &__icon-line {
@@ -52,13 +62,13 @@
     }
 
     &__menu{
-        position: absolute;
+        position: fixed;
         display: none;
         left:0;
         top:0;
         bottom:0;
         background: #fff;
-        width: 295px;
+        width: 300px;
         z-index: 2;
 
         &::after{
