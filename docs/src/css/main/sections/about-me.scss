@@ -1,9 +1,7 @@
 .about-me {
     &__container {
-        padding: 20px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 20px 0 30px 0;
+        position: relative;
 
 
         &_active {
@@ -13,12 +11,15 @@
                     //min-width: 300px;
                     //height: 300px;
                     margin-right: 30px;
-                    //transition: all 0.5s ease-out;
+                    left:0;
+                    transform: translateX(0%);
 
                 }
 
                 .about-me__text {
                     display:block;
+                    opacity: 1;
+
 
                 }
             }
@@ -28,44 +29,52 @@
 
     &__avatar {
         background-image: url("/assets/img/about-me__avatar.jpg");
-        min-width: 200px;
+        width: 200px;
         height: 200px;
         background-size: cover;
         background-position: center;
-        margin: 20px 0;
+        left:50%;
+        transform: translateX(-50%);
+        transition: all 0.5s ease-in-out;
+        position: absolute;
 
 
 
     }
 
     &__text {
-        display: none;
+        display: block;
+        margin-left: 250px;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out 0.5s;
+
+
 
     }
 
-    &__text-line {
+    &__text-line:not(:first-child) {
         margin-top: 20px;
     }
 }
 
 
 
-.about-me__container:hover .animation {
-    animation-name: move-left;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes move-left {
-    50% {
-        transform: translateX(-5%);
-
-
-
-    }
-    100% {
-        transform: translateX(-5%);
-
-
-    }
-}
+//.about-me__container:hover .animation {
+//    animation-name: move-left;
+//    animation-duration: 3s;
+//    animation-fill-mode: forwards;
+//}
+//
+//@keyframes move-left {
+//    50% {
+//        transform: translateX(-5%);
+//
+//
+//
+//    }
+//    100% {
+//        transform: translateX(-5%);
+//
+//
+//    }
+//}
