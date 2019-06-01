@@ -113,11 +113,19 @@
     padding: 10px 0;
     align-items: center; }
   .header-mobile__menu-icon {
-    background-image: url("/assets/img/header-mobile__menu-icon.png");
-    background-size: cover;
-    background-position: center;
-    height: 55px;
-    width: 80px; }
+    position: relative; }
+    .header-mobile__menu-icon::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background-image: url("/assets/img/header-mobile__menu-icon.png");
+      background-size: cover;
+      background-position: center;
+      height: 55px;
+      width: 80px;
+      top: -6px;
+      right: -16px;
+      opacity: 0.8; }
     .header-mobile__menu-icon-content {
       border: 1px solid #a1a1a1;
       display: flex;
