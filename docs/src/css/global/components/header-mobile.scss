@@ -1,6 +1,16 @@
 .header-mobile{
     display:none;
 
+    &_active{
+        & .header-mobile__menu-icon {
+            margin-left: 200px;
+            z-index: 3;
+        }
+        & .header-mobile__menu {
+            display: block;
+        }
+    }
+
     &__container {
         display: flex;
         padding: 10px 0;
@@ -25,14 +35,9 @@
             margin-left: 10px;
             position: relative;
             padding: 0 5px;
-
         }
 
-        &_active{
-            margin-left: 200px;
-            z-index: 3;
 
-        }
 
         //&::before {
         //    content: "";
@@ -82,13 +87,8 @@
             height: 180px;
             bottom:0;
             right: 0;
-
         }
-
-        &_active{
-            display: block;
-        }
-    }
+     }
 
     &__menu-content{
         display: flex;
@@ -96,7 +96,6 @@
         padding: 10px 20px 0 20px;
         width:200px;
     }
-
 
     &__link {
         color: #a1a1a1;
