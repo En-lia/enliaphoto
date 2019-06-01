@@ -3,18 +3,9 @@
 
     &__container {
         display: flex;
-        justify-content: center;
-        padding: 15px 0 15px 0;
+        padding: 10px 0;
         align-items: center;
 }
-    &__menu{
-        display: flex;
-        flex-direction: column;
-        border:1px solid #a1a1a1;
-        padding: 10px 20px 0 20px;
-
-    }
-
     &__menu-icon{
         display: flex;
         align-items: center;
@@ -23,9 +14,15 @@
         border:1px solid #a1a1a1;
         width: 42px;
         height: 42px;
-        margin-right: 5%;
+        margin-left: 10px;
         position: relative;
         padding: 0 5px;
+
+        &_active{
+            margin-left: 200px;
+            z-index: 3;
+
+        }
 
         &::before {
             content: "";
@@ -41,8 +38,8 @@
             z-index: -1;
             opacity: 0.8;
         }
-
     }
+
     &__icon-line {
         width: 100%;
         height: 5px;
@@ -52,6 +49,42 @@
         &:nth-child(2){
             margin: 5px 0;
         }
+    }
+
+    &__menu{
+        position: absolute;
+        display: none;
+        left:0;
+        top:0;
+        bottom:0;
+        background: #fff;
+        width: 295px;
+        z-index: 2;
+
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            background-image: url("/assets/img/header__logo_full.png");
+            background-size: cover;
+            background-position: center;
+            width: 120px;
+            height: 180px;
+            bottom:0;
+            right: 0;
+
+        }
+
+        &_active{
+            display: block;
+        }
+    }
+
+    &__menu-content{
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px 0 20px;
+        width:200px;
     }
 
 
@@ -68,8 +101,8 @@
         &::before{
             content: "";
             display: block;
-            height:42px;
-            width:135px;
+            height:44px;
+            width:165px;
             background-image: url("/assets/img/header-mobile__menu_backround.png");
             background-size: cover;
             background-position: center;
@@ -81,18 +114,26 @@
         }
     }
     &__logo {
-        height:170px;
-        width:115px;
-        background-image: url("/assets/img/header__logo_full.png");
+        height:75px;
+        width:110px;
+        background-image: url("/assets/img/header__logo_part1.png");
         background-size: cover;
         background-position: center;
-
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 5px;
     }
 }
-
 
 @media (max-width: 690px) {
     .header-mobile {
         display: block;
+
+        &__menu{
+
+        }
     }
+
+
 }
