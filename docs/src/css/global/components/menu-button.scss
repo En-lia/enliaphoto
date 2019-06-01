@@ -1,0 +1,41 @@
+.menu-button{
+    position: relative;
+    &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url("/assets/img/header-mobile__menu-icon.png");
+        background-size: cover;
+        background-position: center;
+        height: 55px;
+        width: 80px;
+        top: -6px;
+        right: -16px;
+        opacity: 0.8;
+    }
+
+    &__container{
+        border:1px solid #a1a1a1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 42px;
+        height: 42px;
+        margin-left: 10px;
+        position: relative;
+        padding: 0 5px;
+    }
+
+    &__line {
+        width: 100%;
+        height: 5px;
+        background: white;
+        border-radius: 5px;
+
+        &:nth-child(2){
+            margin: 5px 0;
+        }
+    }
+}
+
