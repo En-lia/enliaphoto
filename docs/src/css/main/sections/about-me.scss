@@ -1,21 +1,22 @@
 .about-me {
     &__container {
-        padding: 20px 0 30px 0;
+        min-height: 280px;
+        padding: 10px 0 20px 0;
         position: relative;
+        display: flex;
 
         &_active {
             &:hover {
                 .about-me__avatar {
                     background-image: url("/assets/img/about-me__avatar_active.jpg");
-                    margin-right: 30px;
                     left:0;
                     transform: translate(0%, -50%);
                     transition: all 0.5s ease-in-out;
                 }
                 .about-me__text {
-                    display:block;
                     opacity: 1;
-                    transition: opacity 0.5s ease-in-out 0.3s;
+                    transition: all 0.5s ease-in-out 0.3s;
+
                 }
             }
         }
@@ -36,9 +37,10 @@
 
     &__text {
         display: block;
-        margin-left: 220px;
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
+        margin: auto;
+        padding-left: 150px;
     }
 
     &__text-line:not(:first-child) {
@@ -46,24 +48,40 @@
     }
 }
 
+@media (max-width: 1120px) {
+    .about-me {
+        &__text {
+            padding-left: 220px;
+        }
+    }
+}
 
 
-//.about-me__container:hover .animation {
-//    animation-name: move-left;
-//    animation-duration: 3s;
-//    animation-fill-mode: forwards;
-//}
-//
-//@keyframes move-left {
-//    50% {
-//        transform: translateX(-5%);
-//
-//
-//
-//    }
-//    100% {
-//        transform: translateX(-5%);
-//
-//
-//    }
-//}
+@media (max-width: 500px) {
+    .about-me {
+        &__container {
+            &_active {
+                &:hover {
+                    .about-me__avatar {
+                        width: 150px;
+                        height: 150px;
+                        left:50%;
+                        transform: translate(-50%, -50%);
+                        top:75px;
+                        transition: all 0.5s ease-in-out 0.3s;
+                    }
+
+                    .about-me__text {
+                        opacity: 1;
+                        transition: all 0.5s ease-in-out 0.3s;
+                    }
+                }
+            }
+        }
+
+        &__text {
+            padding-left: 0;
+            padding-top:150px;
+        }
+    }
+}
