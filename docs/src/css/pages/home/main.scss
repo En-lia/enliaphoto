@@ -1,0 +1,21 @@
+
+// Подключаем общие-глобальные компоненты
+// которые нам нужны на этой странице
+@import "../../components/main";
+@import "../../components/fonts";
+@import "../../components/footer";
+@import "../../components/header";
+@import "../../components/wrapper";
+@import "../../components/separator";
+@import "../../components/header-mobile";
+@import "../../components/menu-button";
+@import "../../components/form";
+
+// Подключаем стили секций страницы
+@import "sections/portfolio";
+@import "sections/about-me";
+@import "sections/price";
+@import "sections/contacts";
+
+// Подключаем стили компонентов страницы
+@import "components/title";

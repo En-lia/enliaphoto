@@ -14,7 +14,7 @@ const env = require('yargs').argv;
 /*
     запуск как в css, только gulp будет
     перезапускать сборку, если файлы изменились
-    пример: gulp css:w --build global
+    пример: gulp css:w --page home
  */
 
 gulp.task('css:w', function() {
@@ -31,16 +31,17 @@ gulp.task('css:w', function() {
 
 /*
     запуск единоразовой сборки
-    gulp css --build [имя пакета в src/css/...]
-    пример: gulp css --build global --prod
+    gulp css --page [имя страницы в src/css/pages/...]
+    пример: gulp css --page home --prod
+    пример: gulp css:w --page home
 
-    Добавляй --prod при сборке перед выгрузкой
+    Добавляй --prod при сборке перед выгрузкой на сайт
  */
 gulp.task('css', function() {
-    const build = env.build;
+    const page = env.page;
     const isProd = env.prod;
     // берет scss файл с которого начинает сборку
-    return gulp.src(`./docs/src/css/${build}/main.scss`)
+    return gulp.src(`./docs/src/css/pages/${page}/main.scss`)
     // собирает scss в css
         .pipe(sass.sync().on('error', sass.logError))
 
@@ -59,7 +60,7 @@ gulp.task('css', function() {
         .pipe(gulpif(isProd, cssmin()))
 
         // Переименовывает файл
-        .pipe(rename(`${build}.bundle.css`))
+        .pipe(rename(`${page}.bundle.css`))
 
         // Кладет собранный файл в дист
         .pipe(gulp.dest(`./docs/dist/css`))

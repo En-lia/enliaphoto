@@ -1,3 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none; }
+
+body {
+  font-family: CaviarDreams, sans-serif;
+  font-weight: 400; }
+
+@font-face {
+  font-family: 'CaviarDreams';
+  src: url("/assets/fonts/CaviarDreams.woff2") format("woff2"), url("/assets/fonts/CaviarDreams.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Reey';
+  src: url("/assets/fonts/reey-regular-webfont.woff2") format("woff2"), url("/assets/fonts/reey-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal; }
+
 .footer {
   background: url("/assets/img/footer__background.jpg") bottom/cover; }
   .footer__container {
@@ -73,20 +97,6 @@
   max-width: 1200px;
   padding: 0 20px;
   margin: 0 auto; }
-
-@font-face {
-  font-family: 'CaviarDreams';
-  src: url("/assets/fonts/CaviarDreams.woff2") format("woff2"), url("/assets/fonts/CaviarDreams.woff") format("woff");
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Reey';
-  src: url("/assets/fonts/reey-regular-webfont.woff2") format("woff2"), url("/assets/fonts/reey-regular-webfont.woff") format("woff");
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal; }
 
 .separator {
   padding-bottom: 300px; }
@@ -295,12 +305,229 @@
       width: 510px;
       top: 64px; } }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  outline: none; }
+.portfolio {
+  background: #efefef;
+  padding-bottom: 20px; }
+  .portfolio__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 -10px; }
+  .portfolio__content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1; }
+  .portfolio__item {
+    position: relative;
+    margin: 10px;
+    width: 30%;
+    text-decoration: none;
+    color: black; }
+    .portfolio__item::before {
+      content: "";
+      display: block;
+      margin-top: 100%; }
+    .portfolio__item::after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.6; }
+    .portfolio__item:hover::after {
+      opacity: 1;
+      cursor: pointer; }
+    .portfolio__item:hover .portfolio__label {
+      text-shadow: 1px 1px 3px white, -1px -1px 3px white, 3px 3px 6px white, -3px -3px 6px white, 4px 4px 10px white, -4px -4px 10px white, 10px 10px 15px white, -10px -10px 15px white; }
+    .portfolio__item_love-story::after {
+      background-image: url("/assets/img/portfolio__lovestory_background.jpg"); }
+    .portfolio__item_portraits::after {
+      background-image: url("/assets/img/portfolio__portraits_background.jpg"); }
+    .portfolio__item_weddings::after {
+      background-image: url("/assets/img/portfolio__weddings_background.jpg"); }
+    .portfolio__item_maternity::after {
+      background-image: url("/assets/img/portfolio__maternity_background.jpg"); }
+    .portfolio__item_families::after {
+      background-image: url("/assets/img/portfolio__familiess_background.jpg"); }
+    .portfolio__item_feeling-lucky::after {
+      background: white; }
+    .portfolio__item_feeling-lucky .portfolio__label_eng {
+      font-size: 30px; }
+  .portfolio__label {
+    text-align: center; }
+    .portfolio__label_eng {
+      font-family: Reey, sans-serif;
+      line-height: 95px;
+      font-size: 35px; }
+    .portfolio__label_rus {
+      font-size: 25px; }
 
-body {
-  font-family: CaviarDreams, sans-serif;
-  font-weight: 400; }
+@media (max-width: 950px) {
+  .portfolio__label_eng {
+    line-height: 55px;
+    font-size: 25px; }
+  .portfolio__label_rus {
+    font-size: 20px; }
+  .portfolio__item_feeling-lucky .portfolio__label_eng {
+    font-size: 22px; } }
+
+@media (max-width: 690px) {
+  .portfolio__item {
+    width: 45%; }
+    .portfolio__item_portraits {
+      order: 1; }
+    .portfolio__item_weddings {
+      order: 2; }
+    .portfolio__item_maternity {
+      order: 1; }
+    .portfolio__item_families {
+      order: 2; }
+    .portfolio__item_feeling-lucky {
+      order: 2; } }
+
+@media (max-width: 450px) {
+  .portfolio__label_eng {
+    line-height: 55px;
+    font-size: 20px; }
+  .portfolio__label_rus {
+    font-size: 15px; }
+  .portfolio__item {
+    width: 43%; }
+    .portfolio__item_feeling-lucky .portfolio__label_eng {
+      font-size: 15px; } }
+
+.about-me__container {
+  min-height: 280px;
+  padding: 10px 0 20px 0;
+  position: relative;
+  display: flex; }
+  .about-me__container_active:hover .about-me__avatar {
+    background-image: url("/assets/img/about-me__avatar_active.jpg");
+    left: 0;
+    transform: translate(0%, -50%);
+    transition: all 0.5s ease-in-out; }
+  .about-me__container_active:hover .about-me__text {
+    opacity: 1;
+    transition: all 0.5s ease-in-out 0.3s; }
+
+.about-me__avatar {
+  background-image: url("/assets/img/about-me__avatar.jpg");
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  transition: all 0.5s ease-in-out 0.3s;
+  position: absolute; }
+
+.about-me__text {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  margin: auto;
+  padding-left: 150px; }
+
+.about-me__text-line:not(:first-child) {
+  margin-top: 20px; }
+
+@media (max-width: 1120px) {
+  .about-me__text {
+    padding-left: 220px; } }
+
+@media (max-width: 500px) {
+  .about-me__container_active:hover .about-me__avatar {
+    width: 150px;
+    height: 150px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 75px;
+    transition: all 0.5s ease-in-out 0.3s; }
+  .about-me__container_active:hover .about-me__text {
+    opacity: 1;
+    transition: all 0.5s ease-in-out 0.3s; }
+  .about-me__text {
+    padding-left: 0;
+    padding-top: 150px; } }
+
+.price {
+  background: #efefef;
+  padding-bottom: 20px; }
+  .price__container {
+    padding: 40px 0 60px 0;
+    text-align: center; }
+  .price__text-line {
+    margin-top: 20px;
+    font-size: 18px; }
+
+.contacts__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.contacts__text {
+  margin: 20px;
+  text-align: center; }
+
+.contacts__social {
+  display: flex;
+  justify-content: center; }
+
+.contacts__icon {
+  content: "";
+  display: block;
+  background-size: cover;
+  background-position: center;
+  height: 35px;
+  width: 35px;
+  opacity: 0.8; }
+  .contacts__icon:hover {
+    opacity: 1; }
+  .contacts__icon_instagram {
+    background-image: url("/assets/img/contacts__instagram.png"); }
+  .contacts__icon_vk {
+    margin-left: 30px;
+    background-image: url("/assets/img/contacts__vk.png"); }
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 10px 0; }
+  .title__text {
+    color: #a1a1a1;
+    font-size: 22px;
+    margin: 0 30px  0 30px; }
+  .title::before {
+    content: '';
+    display: block;
+    flex-grow: 1;
+    height: 1px;
+    width: 30px;
+    background: #a1a1a1; }
+  .title::after {
+    display: block;
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    width: 30px;
+    background: #a1a1a1; }
+
+@media (max-width: 950px) {
+  .title__text {
+    color: #a1a1a1;
+    font-size: 18px;
+    margin: 0 20px 0 20px; } }
