@@ -1,8 +1,18 @@
 .contacts {
-    &__container {
+    &__content{
         display: flex;
         justify-content: center;
-        padding: 40px 0;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__text{
+        margin: 20px;
+        text-align: center;
+    }
+    &__social {
+        display: flex;
+        justify-content: center;
     }
 
     &__icon {
@@ -26,6 +36,6 @@
             margin-left: 30px;
             background-image: url("/assets/img/contacts__vk.png");
         }
-
     }
 }
+

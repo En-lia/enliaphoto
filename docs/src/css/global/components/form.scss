@@ -1,0 +1,108 @@
+.form {
+    width: 340px;
+    background-color: white;
+    border-radius: 3px;
+    padding: 20px 20px;
+    box-shadow: 2px 2px 30px 0 rgba(0, 0, 0, 0.3);
+    margin: 10px 0;
+    position: relative;
+
+    &::before{
+        content: "";
+        display: block;
+        height:400px;
+        width:600px;
+        background-image: url("/assets/img/header-mobile__menu-icon.png");
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        left: -145px;
+        z-index: -1;
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+   }
+
+    &__input {
+        outline: none;
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        border-bottom: 1px solid #a1a1a1;
+        font-size: 16px;
+        color: #a1a1a1;
+        text-align: center;
+        padding-bottom: 5px;
+    }
+
+    &__input-box {
+        margin: 5px 10px 12px 10px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__button {
+        display: block;
+        padding: 20px 15px;
+        font-family: CaviarDreams, sans-serif;
+        color: #a1a1a1;
+        border-radius: 3px;
+        border: none;
+        font-size: 16px;
+        background: linear-gradient(to bottom, #f2dad9, #fff 0%, #eed1ce);
+
+        &:hover{
+            color: #000000;
+            cursor: pointer;
+        }
+    }
+}
+
+.button-block {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.error-massage {
+    display: none;
+}
+
+@media (max-width: 590px) {
+    .form {
+        &::before {
+            height: 345px;
+            width: 506px;
+            left: -100px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .form {
+        width: 300px;
+        &::before {
+            height: 345px;
+            width: 506px;
+            left: -105px;
+            top: 35px;
+            transform: rotate(270deg);
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .form {
+        width: 300px;
+        &::before {
+            height: 280px;
+            width: 510px;
+            top: 64px;
+        }
+    }
+}

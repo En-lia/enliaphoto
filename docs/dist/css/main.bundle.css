@@ -195,10 +195,19 @@
     margin-top: 20px;
     font-size: 18px; }
 
-.contacts__container {
+.contacts__content {
   display: flex;
   justify-content: center;
-  padding: 40px 0; }
+  align-items: center;
+  flex-direction: column; }
+
+.contacts__text {
+  margin: 20px;
+  text-align: center; }
+
+.contacts__social {
+  display: flex;
+  justify-content: center; }
 
 .contacts__icon {
   content: "";

@@ -102,6 +102,8 @@
         <div class="about-me__container about-me__container_active">
             <div class="about-me__avatar animation"></div>
             <div class="about-me__text">
+                <p class="about-me__text-line">Привет!</p>
+                <p class="about-me__text-line">Меня зовут Элина. Живу и снимаю в городе Санкт-Петербург.</p>
                 <p class="about-me__text-line">Каждая съёмка – это маленькая
                     история, наполненная воспоминаниями, эмоциями, моментами, жизнью. </p>
                 <p class="about-me__text-line">Мы проживаем эту историю вместе. Непринужденно, в доброй и теплой
@@ -109,7 +111,6 @@
                 <p class="about-me__text-line">И самое ценное для меня - наблюдать как наша история выходит
                     настоящей и искренней. </p>
             </div>
-
         </div>
     </div>
 </section>
@@ -129,16 +130,61 @@
         <div class="title__text">Контакты</div>
     </div>
     <div class="wrapper">
-        <div class="contacts__container">
-            <div class="contacts__item">
-                <a href="https://www.instagram.com/enlia_photography/">
-                    <div class="contacts__icon contacts__icon_instagram"></div>
-                </a>
-            </div>
-            <div class="contacts__item">
-                <a href="https://vk.com/enlia">
-                    <div class="contacts__icon contacts__icon_vk"></div>
-                </a>
+        <div class="contacts__content">
+            <p class="contacts__text">Ты можешь написать мне, заполнив форму ниже</p>
+            <form action="" method="post" class="form">
+                <div class="form__field form__field_name">
+                    <p class="form__field-title">Имя</p>
+                    <div class="form__input-box">
+                        <input class="form__input form__input_name" type="text" name="name">
+                    </div>
+                    <div class="error-massage">
+                        <div class="error-block">Заполните поле</div>
+                    </div>
+                </div>
+                <div class="form__field form__field_email">
+                    <p class="form__field-title">E-Mail</p>
+                    <div class="form__input-box">
+                        <input class="form__input form__input_email" type="text" name="email">
+                    </div>
+                    <div class="error-massage">
+                        <div class="error-block">Введите корректный E-Mail</div>
+                    </div>
+                </div>
+                <div class="form__field form__field_contacts">
+                    <p class="form__field-title">Tel, Whatsapp, Telegram</p>
+                    <div class="form__input-box">
+                        <input class="form__input form__input_contacts" type="text" name="contacts">
+                    </div>
+                    <div class="error-massage">
+                        <div class="error-block">Введите корректный телефон</div>
+                    </div>
+                </div>
+                <div class="form__field form__field_request">
+                    <p class="form__field-title">Подробности съёмки</p>
+                    <div class="form__input-box">
+                        <input class="form__input form__input_request" type="text" name="request">
+                    </div>
+                    <div class="error-massage">
+                        <div class="error-block">Введите текст</div>
+                    </div>
+                </div>
+                <div class="button-block">
+                    <button class="form__button" type="submit">Отправить запрос</button>
+                </div>
+            </form>
+            <p class="contacts__text">Или найти меня в соцсетях</p>
+            <div class="contacts__social">
+                <div class="contacts__item">
+                    <a href="https://www.instagram.com/enlia_photography/">
+                        <div class="contacts__icon contacts__icon_instagram"></div>
+                    </a>
+                </div>
+                <div class="contacts__item">
+                    <a href="https://vk.com/enlia">
+                        <div class="contacts__icon contacts__icon_vk"></div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
