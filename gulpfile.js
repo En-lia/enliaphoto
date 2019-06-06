@@ -24,7 +24,7 @@ gulp.task('css:w', function() {
             middleware: [
                 function(req, res, next) {
                     if (/photography/.test(req.url)) {
-                        const url = req.url.replace('photography/', '');
+                        const url = req.url.replace(/photography\/?/, '');
                         res.writeHead(302, {
                             'Location': url,
                         });
