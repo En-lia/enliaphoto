@@ -20,7 +20,19 @@ const env = require('yargs').argv;
 gulp.task('css:w', function() {
     browserSync.init({
         server: {
-            baseDir: './docs'
+            baseDir: './docs',
+            middleware: [
+                function(req, res, next) {
+                    if (/photography/.test(req.url)) {
+                        const url = req.url.replace(/photography\/?/, '');
+                        res.writeHead(302, {
+                            'Location': url,
+                        });
+                        res.end();
+                    }
+                    next();
+                }
+            ],
         }
     });
     gulp.watch('docs/src/css/**/*.scss', { ignoreInitial: false }, gulp.series('css'));
