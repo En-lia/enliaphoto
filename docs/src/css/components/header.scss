@@ -22,7 +22,14 @@
     color: #a1a1a1;
     font-size: 20px;
     text-decoration: none;
+    cursor:pointer;
+
+    &:hover{
+      color: #ffffff;
+
+    }
   }
+
 
   &__logo {
     width:155px;

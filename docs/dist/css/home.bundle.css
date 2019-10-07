@@ -305,6 +305,36 @@ body {
       width: 510px;
       top: 64px; } }
 
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 10px 0; }
+  .title__text {
+    color: #a1a1a1;
+    font-size: 22px;
+    margin: 0 30px  0 30px; }
+  .title::before {
+    content: '';
+    display: block;
+    flex-grow: 1;
+    height: 1px;
+    width: 30px;
+    background: #a1a1a1; }
+  .title::after {
+    display: block;
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    width: 30px;
+    background: #a1a1a1; }
+
+@media (max-width: 950px) {
+  .title__text {
+    color: #a1a1a1;
+    font-size: 18px;
+    margin: 0 20px 0 20px; } }
+
 .portfolio {
   background: #efefef;
   padding-bottom: 20px; }
@@ -501,33 +531,3 @@ body {
   .contacts__icon_vk {
     margin-left: 30px;
     background-image: url("/assets/img/contacts__vk.png"); }
-
-.title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0 10px 0; }
-  .title__text {
-    color: #a1a1a1;
-    font-size: 22px;
-    margin: 0 30px  0 30px; }
-  .title::before {
-    content: '';
-    display: block;
-    flex-grow: 1;
-    height: 1px;
-    width: 30px;
-    background: #a1a1a1; }
-  .title::after {
-    display: block;
-    content: '';
-    flex-grow: 1;
-    height: 1px;
-    width: 30px;
-    background: #a1a1a1; }
-
-@media (max-width: 950px) {
-  .title__text {
-    color: #a1a1a1;
-    font-size: 18px;
-    margin: 0 20px 0 20px; } }

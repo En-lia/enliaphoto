@@ -14,6 +14,7 @@ const env = require('yargs').argv;
 /*
     запуск как в css, только gulp будет
     перезапускать сборку, если файлы изменились
+
     пример: gulp css:w --page home
  */
 
