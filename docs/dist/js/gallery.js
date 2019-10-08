@@ -1,9 +1,18 @@
 function site() {
-    var category = document.location.search;
+    var search = document.location.search;
+    search = search.slice(1);
+    var searchArray = search.split('&');
+    var searchValues = {};
+    for (var i = 0; i < searchArray.length; i++) {
+        var pair = searchArray[i].split('=');
+        searchValues[pair[0]] = pair[1];
+    }
+console.log(searchValues);
+
     var sliderContainer = document.querySelector(".fotorama");
     var titleContainer = document.querySelector(".title__text");
     var headerContainer = document.querySelector(".header__container");
-    // console.dir(titleContainer.innerHTML);
+
 
     var pictureLovestory = [
         '1(1).jpg',
@@ -203,27 +212,27 @@ function site() {
         '2(15).jpg',
     ];
 
-    var categoriesArray = ['?category=lovestory', '?category=portraits', '?category=weddings', '?category=maternity', '?category=families'];
+    var categoriesArray = ['lovestory', 'portraits', 'weddings', 'maternity', 'families'];
 
     var headerLinks = [
         {
-            link: '?category=lovestory',
+            link: 'lovestory',
             title: 'Лавстори'
         },
         {
-            link: '?category=portraits',
+            link: 'portraits',
             title: 'Портреты'
         },
         {
-            link: '?category=weddings',
+            link: 'weddings',
             title: 'Свадьбы'
         },
         {
-            link: '?category=maternity',
+            link: 'maternity',
             title: 'В ожидании'
         },
         {
-            link: '?category=families',
+            link: 'families',
             title: 'Семейная'
         }
     ];
@@ -252,10 +261,10 @@ function site() {
                 var headerLine = '<a href="/photography" class="header__link">Главная</a>';
                 allHeaderLines += headerLine;
             } else if (i < 2) {
-                headerLine = '<a href="/photography/gallery/' + newHeaderLinks[i].link + '" class="header__link">' + newHeaderLinks[i].title + '</a>';
+                headerLine = '<a href="/photography/gallery/?category=' + newHeaderLinks[i].link + '" class="header__link">' + newHeaderLinks[i].title + '</a>';
                 allHeaderLines += headerLine;
             } else {
-                headerLine = '<a href="/photography/gallery/' + newHeaderLinks[i - 1].link + '" class="header__link">' + newHeaderLinks[i - 1].title + '</a>';
+                headerLine = '<a href="/photography/gallery/?category=' + newHeaderLinks[i - 1].link + '" class="header__link">' + newHeaderLinks[i - 1].title + '</a>';
                 allHeaderLines += headerLine;
             }
         }
@@ -263,38 +272,38 @@ function site() {
     }
 
     function getLucky() {
-        category = categoriesArray[Math.round(Math.random() * (categoriesArray.length - 1))];
+        searchValues.category = categoriesArray[Math.round(Math.random() * (categoriesArray.length - 1))];
         checkCategory();
     };
 
     function checkCategory() {
-        switch (category) {
-            case '?category=lovestory':
+        switch (searchValues.category) {
+            case 'lovestory':
                 createHeader(headerLinks[0]);
                 createTitle('ЛАВСТОРИ | LOVESTORY');
                 createSlider(pictureLovestory, 'lovestory');
                 break;
-            case '?category=portraits':
+            case 'portraits':
                 createHeader(headerLinks[1]);
                 createTitle('ПОРТРЕТЫ | PORTAITS');
                 createSlider(picturePortraits, 'portraits');
                 break;
-            case '?category=weddings':
+            case 'weddings':
                 createHeader(headerLinks[2]);
                 createTitle('СВАДЬБЫ | WEDDINGS');
                 createSlider(pictureWeddings, 'weddings');
                 break;
-            case '?category=maternity':
+            case 'maternity':
                 createHeader(headerLinks[3]);
                 createTitle('В ОЖИДАНИИ | MATERNITY');
                 createSlider(pictureMaternity, 'maternity');
                 break;
-            case '?category=families':
+            case 'families':
                 createHeader(headerLinks[4]);
                 createTitle('СЕМЕЙНАЯ | FAMILIES');
                 createSlider(pictureFamilies, 'families');
                 break;
-            case '?category=get_lucky':
+            default:
                 getLucky();
                 break;
         }
