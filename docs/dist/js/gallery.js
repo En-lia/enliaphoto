@@ -1,18 +1,8 @@
 function site() {
-    var search = document.location.search;
-    search = search.slice(1);
-    var searchArray = search.split('&');
-    var searchValues = {};
-    for (var i = 0; i < searchArray.length; i++) {
-        var pair = searchArray[i].split('=');
-        searchValues[pair[0]] = pair[1];
-    }
-console.log(searchValues);
-
+    var searchValues = createObjectFromSearch();
     var sliderContainer = document.querySelector(".fotorama");
     var titleContainer = document.querySelector(".title__text");
     var headerContainer = document.querySelector(".header__container");
-
 
     var pictureLovestory = [
         '1(1).jpg',
@@ -236,6 +226,18 @@ console.log(searchValues);
             title: 'Семейная'
         }
     ];
+
+    function createObjectFromSearch() {
+        var search = document.location.search;
+        search = search.slice(1);
+        var searchArray = search.split('&');
+        var searchValues = {};
+        for (var i = 0; i < searchArray.length; i++) {
+            var pair = searchArray[i].split('=');
+            searchValues[pair[0]] = pair[1];
+        }
+        return searchValues;
+    };
 
     function createTitle(title) {
         titleContainer.innerHTML = title;
