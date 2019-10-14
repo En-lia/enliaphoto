@@ -12,14 +12,14 @@ body {
   font-family: 'CaviarDreams';
   src: url("/assets/fonts/CaviarDreams.woff2") format("woff2"), url("/assets/fonts/CaviarDreams.woff") format("woff");
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   font-style: normal; }
 
 @font-face {
   font-family: 'Reey';
   src: url("/assets/fonts/reey-regular-webfont.woff2") format("woff2"), url("/assets/fonts/reey-regular-webfont.woff") format("woff");
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   font-style: normal; }
 
 .footer {
@@ -37,9 +37,22 @@ body {
 .header {
   background-image: url("/assets/img/header__background_whatercolor.png");
   background-size: cover;
-  background-position: bottom; }
-  .header_active .header__logo {
-    display: none; }
+  background-position: bottom;
+  position: fixed;
+  z-index: 100;
+  width: 100%; }
+  .header_active .header__logo::after {
+    opacity: 0;
+    top: 40px;
+    height: 100px;
+    width: 95px;
+    right: 35px;
+    transition-duration: 0.3s; }
+  .header_active .header__logo::before {
+    height: 70px;
+    width: 108px;
+    right: 26px;
+    transition-duration: 0.3s; }
   .header__container {
     display: flex;
     justify-content: space-between;
@@ -47,7 +60,11 @@ body {
   .header__link {
     color: #a1a1a1;
     font-size: 20px;
-    text-decoration: none; }
+    text-decoration: none;
+    cursor: pointer; }
+    .header__link:hover {
+      text-shadow: 1px 1px 3px white, -1px -1px 3px white, 3px 3px 6px white, -3px -3px 6px white, 4px 4px 10px white, -4px -4px 10px white, 10px 10px 10px white, -10px -10px 10px white;
+      transition-duration: 0.3s; }
   .header__logo {
     width: 155px;
     position: relative; }
@@ -56,11 +73,13 @@ body {
       display: block;
       height: 100px;
       width: 155px;
+      right: 0;
       background-image: url("/assets/img/header__logo_part1.png");
       background-size: cover;
       background-position: center;
       position: absolute;
-      top: -10px; }
+      top: -10px;
+      transition-duration: 0.3s; }
     .header__logo::after {
       content: "";
       display: block;
@@ -71,7 +90,8 @@ body {
       background-position: center;
       position: absolute;
       top: 85px;
-      right: 0; }
+      right: 0;
+      transition-duration: 0.3s; }
 
 @media (max-width: 950px) {
   .header__link {
@@ -79,14 +99,19 @@ body {
   .header__logo {
     width: 135px; }
     .header__logo::before {
-      height: 90px;
-      width: 135px;
-      top: -10px; }
+      height: 86px;
+      width: 137px;
+      top: -10px;
+      right: 7px; }
     .header__logo::after {
       height: 160px;
       width: 155px;
-      top: 75px;
-      right: 0; } }
+      top: 74px;
+      right: 8px; }
+  .header_active .header__logo::after {
+    right: 32px; }
+  .header_active .header__logo::before {
+    right: 15px; } }
 
 @media (max-width: 690px) {
   .header__container {
@@ -111,30 +136,49 @@ body {
 
 @media (max-width: 690px) {
   .separator {
-    display: none; } }
+    padding-bottom: 62px; } }
+
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: white;
+  opacity: 0.7;
+  z-index: 2;
+  display: none; }
 
 .header-mobile {
-  display: none; }
+  display: none;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 15px silver; }
   .header-mobile_active .menu-button {
-    margin-left: 200px;
-    z-index: 3; }
+    left: 200px;
+    z-index: 4; }
   .header-mobile_active .header-mobile__menu {
+    display: block;
+    left: 0;
+    transition: left 0.3s ease-in-out; }
+  .header-mobile_active .overlay {
     display: block; }
-  .header-mobile_active .header-mobile__logo {
-    display: none; }
   .header-mobile__container {
     display: flex;
     padding: 10px 0;
     align-items: center; }
   .header-mobile__menu {
     position: fixed;
-    display: none;
-    left: 0;
+    transition: left 0.3s ease-in-out;
+    left: -300px;
     top: 0;
     bottom: 0;
     background: #fff;
     width: 300px;
-    z-index: 2; }
+    z-index: 3;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
     .header-mobile__menu::after {
       content: "";
       display: block;
@@ -189,7 +233,10 @@ body {
     display: block; } }
 
 .menu-button {
-  position: relative; }
+  position: relative;
+  left: 15px;
+  transition: left 0.3s ease-in-out;
+  cursor: pointer; }
   .menu-button::before {
     content: "";
     display: block;
@@ -200,7 +247,7 @@ body {
     height: 55px;
     width: 80px;
     top: -6px;
-    right: -16px;
+    left: -10px;
     opacity: 0.8; }
   .menu-button__container {
     border: 1px solid #a1a1a1;

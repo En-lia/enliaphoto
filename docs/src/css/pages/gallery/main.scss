@@ -1,9 +1,25 @@
 @import "../../components/main";
 @import "../../components/fonts";
 @import "../../components/footer";
+@import "../../components/separator";
 @import "../../components/header";
 @import "../../components/wrapper";
 @import "../../components/header-mobile";
 @import "../../components/menu-button";
 @import "../../components/title";
 @import "./sections/slider";
+
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.main-content {
+    flex-grow: 1;
+}

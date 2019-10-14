@@ -1,99 +1,140 @@
-.header{
-  background-image: url("/assets/img/header__background_whatercolor.png");
-  background-size: cover;
-  background-position: bottom;
-  //position: fixed;
-  //z-index: 2;
-  //width:100%;
-
-  &_active{
-    & .header__logo{
-      display: none;
-    }
-  }
-
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 0 25px 0;
-  }
-
-  &__link {
-    color: #a1a1a1;
-    font-size: 20px;
-    text-decoration: none;
-    cursor:pointer;
-
-    &:hover{
-      color: #ffffff;
-
-    }
-  }
+.header {
+    background-image: url("/assets/img/header__background_whatercolor.png");
+    background-size: cover;
+    background-position: bottom;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
 
 
-  &__logo {
-    width:155px;
-    position: relative;
+    &_active {
+        & .header__logo::after {
+            opacity: 0;
+            top: 40px;
+            height: 100px;
+            width: 95px;
+            right: 35px;
+            transition-duration: 0.3s;
+        }
 
-    &::before{
-      content: "";
-      display: block;
-      height:100px;
-      width:155px;
-      background-image: url("/assets/img/header__logo_part1.png");
-      background-size: cover;
-      background-position: center;
-      position: absolute;
-      top: -10px;
+        & .header__logo::before{
+            height: 70px;
+            width: 108px;
+            right: 26px;
+            transition-duration: 0.3s;
+
+        }
     }
 
-    &::after{
-      content: "";
-      display: block;
-      height:180px;
-      width:175px;
-      background-image: url("/assets/img/header__logo_part2.png");
-      background-size: cover;
-      background-position: center;
-      position: absolute;
-      top: 85px;
-      right: 0;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0 25px 0;
     }
-  }
+
+    &__link {
+        color: #a1a1a1;
+        font-size: 20px;
+        text-decoration: none;
+        cursor: pointer;
+
+
+        &:hover {
+            text-shadow: 1px 1px 3px white,
+            -1px -1px 3px white,
+            3px 3px 6px white,
+            -3px -3px 6px white,
+            4px 4px 10px white,
+            -4px -4px 10px white,
+            10px 10px 10px white,
+            -10px -10px 10px white;
+            transition-duration: 0.3s;
+        }
+    }
+
+
+    &__logo {
+        width: 155px;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            height: 100px;
+            width: 155px;
+            right: 0;
+            background-image: url("/assets/img/header__logo_part1.png");
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: -10px;
+            transition-duration: 0.3s;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            height: 180px;
+            width: 175px;
+            background-image: url("/assets/img/header__logo_part2.png");
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 85px;
+            right: 0;
+            transition-duration: 0.3s;
+
+        }
+    }
 }
 
 
 @media (max-width: 950px) {
-  .header{
-    &__link {
-      font-size: 18px;
-    }
-    &__logo {
-      width:135px;
+    .header {
+        &__link {
+            font-size: 18px;
+        }
 
-      &::before{
-        height:90px;
-        width:135px;
-        top: -10px;
-      }
+        &__logo {
+            width: 135px;
 
-      &::after{
-        height:160px;
-        width:155px;
-        top: 75px;
-        right: 0;
-      }
+            &::before {
+                height: 86px;
+                width: 137px;
+                top: -10px;
+                right: 7px;
+            }
+
+            &::after {
+                height: 160px;
+                width: 155px;
+                top: 74px;
+                right: 8px;
+            }
+        }
+
+        &_active {
+            & .header__logo::after {
+                right: 32px;
+            }
+
+            & .header__logo::before{
+
+                right: 15px;
+
+
+            }
+        }
     }
-  }
 }
 
 
 @media (max-width: 690px) {
-  .header{
+    .header {
 
 
-    &__container {
-      display:none;
+        &__container {
+            display: none;
+        }
     }
-  }
 }

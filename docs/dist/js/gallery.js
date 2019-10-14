@@ -3,6 +3,8 @@ function site() {
     var sliderContainer = document.querySelector(".fotorama");
     var titleContainer = document.querySelector(".title__text");
     var headerContainer = document.querySelector(".header__container");
+    var headerMobileContainer = document.querySelector(".header-mobile__menu-content");
+
 
     var pictureLovestory = [
         '1(1).jpg',
@@ -273,6 +275,20 @@ function site() {
         headerContainer.innerHTML = allHeaderLines;
     }
 
+    function createMobileHeader(exclude) {
+        var newHeaderLinks = headerLinks.filter(function (element) {
+            return element !== exclude;
+        });
+
+        var allHeaderLines = '<a href="/photography" class="header-mobile__link">Главная</a>';
+        for (var i = 0; i < newHeaderLinks.length; i++) {
+            console.log(newHeaderLinks[i]);
+            var headerLine = '<a href="/photography/gallery/?category=' + newHeaderLinks[i].link + '" class="header-mobile__link">' + newHeaderLinks[i].title + '</a>';
+            allHeaderLines += headerLine;
+        }
+        headerMobileContainer.innerHTML = allHeaderLines;
+    }
+
     function getLucky() {
         searchValues.category = categoriesArray[Math.round(Math.random() * (categoriesArray.length - 1))];
         checkCategory();
@@ -282,26 +298,31 @@ function site() {
         switch (searchValues.category) {
             case 'lovestory':
                 createHeader(headerLinks[0]);
+                createMobileHeader(headerLinks[0]);
                 createTitle('ЛАВСТОРИ | LOVESTORY');
                 createSlider(pictureLovestory, 'lovestory');
                 break;
             case 'portraits':
                 createHeader(headerLinks[1]);
+                createMobileHeader(headerLinks[1]);
                 createTitle('ПОРТРЕТЫ | PORTAITS');
                 createSlider(picturePortraits, 'portraits');
                 break;
             case 'weddings':
                 createHeader(headerLinks[2]);
+                createMobileHeader(headerLinks[2]);
                 createTitle('СВАДЬБЫ | WEDDINGS');
                 createSlider(pictureWeddings, 'weddings');
                 break;
             case 'maternity':
                 createHeader(headerLinks[3]);
+                createMobileHeader(headerLinks[3]);
                 createTitle('В ОЖИДАНИИ | MATERNITY');
                 createSlider(pictureMaternity, 'maternity');
                 break;
             case 'families':
                 createHeader(headerLinks[4]);
+                createMobileHeader(headerLinks[4]);
                 createTitle('СЕМЕЙНАЯ | FAMILIES');
                 createSlider(pictureFamilies, 'families');
                 break;

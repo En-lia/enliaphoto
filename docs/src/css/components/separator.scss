@@ -1,22 +1,26 @@
 .separator {
-  padding-bottom: 300px;
+    padding-bottom: 300px;
 
-  &__container{
-    display: flex;
-    justify-content: center;
-    position: relative;
-  }
+    &__container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    &_gallery {
+        padding-bottom: 62px;
+    }
 }
 
 
 @media (max-width: 950px) {
-  .separator {
-    padding-bottom: 260px;
-  }
+    .separator {
+        padding-bottom: 260px;
+    }
 }
 
 @media (max-width: 690px) {
-  .separator {
-    display: none;
-  }
+    .separator {
+        padding-bottom: 62px;
+    }
 }

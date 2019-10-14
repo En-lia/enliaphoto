@@ -1,6 +1,10 @@
-.menu-button{
+.menu-button {
     position: relative;
-    &::before{
+    left: 15px;
+    transition: left 0.3s ease-in-out;
+    cursor: pointer;
+
+    &::before {
         content: "";
         display: block;
         position: absolute;
@@ -10,12 +14,13 @@
         height: 55px;
         width: 80px;
         top: -6px;
-        right: -16px;
+        left: -10px;
         opacity: 0.8;
+
     }
 
-    &__container{
-        border:1px solid #a1a1a1;
+    &__container {
+        border: 1px solid #a1a1a1;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -33,7 +38,7 @@
         background: white;
         border-radius: 5px;
 
-        &:nth-child(2){
+        &:nth-child(2) {
             margin: 5px 0;
         }
     }

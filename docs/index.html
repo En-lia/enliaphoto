@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 </head>
 <body>
-<!--<header class="header-mobile header-mobile_active">-->
 <header class="header-mobile">
+
     <div class="wrapper">
         <div class="header-mobile__container ">
             <div class="menu-button">
@@ -21,25 +21,25 @@
             </div>
             <div class="header-mobile__menu">
                 <div class="header-mobile__menu-content">
-                    <a href="#portfolio" class="header-mobile__link">Портфолио</a>
-                    <a href="#about-me" class="header-mobile__link">Обо мне</a>
-                    <a href="#price" class="header-mobile__link">Стоимость</a>
-                    <a href="#contacts" class="header-mobile__link">Контакты</a>
+                    <a data-anchor href="#portfolio" class="header-mobile__link">Портфолио</a>
+                    <a data-anchor href="#about-me" class="header-mobile__link">Обо мне</a>
+                    <a data-anchor href="#price" class="header-mobile__link">Стоимость</a>
+                    <a data-anchor href="#contacts" class="header-mobile__link">Контакты</a>
                 </div>
             </div>
-            <div class="header-mobile__logo"></div>
+            <a href="/photography" class="header-mobile__logo"></a>
         </div>
     </div>
+    <div class="overlay"></div>
 </header>
 <header class="header">
-    <!--<header class="header header_active">-->
     <div class="wrapper">
         <div class="header__container">
-            <a href="#portfolio" class="header__link">Портфолио</a>
-            <a href="#about-me" class="header__link">Обо мне</a>
-            <div class="header__logo"></div>
-            <a href="#price" class="header__link">Стоимость</a>
-            <a href="#contacts" class="header__link">Контакты</a>
+            <a data-anchor href="#portfolio" class="header__link">Портфолио</a>
+            <a data-anchor href="#about-me" class="header__link">Обо мне</a>
+            <a href="/photography" class="header__logo"></a>
+            <a data-anchor href="#price" class="header__link">Стоимость</a>
+            <a data-anchor href="#contacts" class="header__link">Контакты</a>
         </div>
     </div>
 </header>
@@ -193,5 +193,7 @@
         <div class="footer__content">2019</div>
     </div>
 </footer>
+<script src="/photography/dist/js/header.js"></script>
+<script src="/photography/dist/js/home.js"></script>
 </body>
 </html>
