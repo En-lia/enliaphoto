@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>En-lia photography</title>
     <link rel="stylesheet" href="/photography/dist/css/home.bundle.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 </head>
@@ -30,7 +31,7 @@
             <a href="/photography" class="header-mobile__logo"></a>
         </div>
     </div>
-    <div class="overlay"></div>
+    <div class="overlay-header"></div>
 </header>
 <header class="header">
     <div class="wrapper">
@@ -92,7 +93,7 @@
 
     </div>
 </section>
-<section id="about-me" class="about-me">
+<section id="about-me" class="about-me" data-aos="fade-up">
     <div class="title">
         <div class="title__text">ОБО МНЕ</div>
     </div>
@@ -113,7 +114,7 @@
         </div>
     </div>
 </section>
-<section id="price" class="price">
+<section id="price" class="price" data-aos="fade-up">
     <div class="title">
         <div class="title__text">СТОИМОСТЬ</div>
     </div>
@@ -124,7 +125,7 @@
         </div>
     </div>
 </section>
-<section id="contacts" class="contacts">
+<section id="contacts" class="contacts" data-aos="fade-up">
     <div class="title">
         <div class="title__text">КОНТАКТЫ</div>
     </div>
@@ -169,7 +170,7 @@
                     </div>
                 </div>
                 <div class="button-block">
-                    <button class="form__button" type="submit">Отправить запрос</button>
+                    <button class="form__button">Отправить запрос</button>
                 </div>
             </form>
             <p class="contacts__text">Или найти меня в соцсетях</p>
@@ -188,12 +189,35 @@
         </div>
     </div>
 </section>
+<!--<div class="overlay-modal overlay-modal_active">-->
+<div class="overlay-modal">
+    <div class="modal">
+        <div class="wave">
+            <div class="wave__three"></div>
+            <div class="wave__four"></div>
+        </div>
+        <div class="modal__content">
+            <div class="modal__message">Сообщение отправлено</div>
+        </div>
+        <div class="button-block">
+            <button class="modal__button">ЗАКРЫТЬ</button>
+        </div>
+        <div class="wave">
+            <div class="wave__one"></div>
+            <div class="wave__two"></div>
+        </div>
+    </div>
+</div>
 <footer class="footer">
     <div class="footer__container">
         <div class="footer__content">2019</div>
     </div>
 </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="/photography/dist/js/header.js"></script>
 <script src="/photography/dist/js/home.js"></script>
+<script src="/photography/dist/js/modal-form.js"></script>
+
+
 </body>
 </html>

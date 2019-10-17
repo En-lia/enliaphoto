@@ -2,7 +2,7 @@ function header() {
     var menuButton = document.querySelector('.menu-button');
     var headerMobile = document.querySelector('.header-mobile');
     var menuLinks = document.querySelectorAll('.header-mobile__link');
-    var header = document.querySelector('.header')
+    var header = document.querySelector('.header');
 
 
     function addClass(object, classString) {

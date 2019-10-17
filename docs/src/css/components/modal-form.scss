@@ -1,0 +1,133 @@
+.overlay-modal {
+    display: none;
+    position: fixed;
+    padding: 0 10px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 51, 51, 0.6);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+
+    &_active {
+        display: flex;
+    }
+}
+
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 340px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 2px 2px 30px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-top: 50px;
+        margin-bottom: 40px;
+        white-space: nowrap;
+    }
+
+    &__message {
+        font-size: 18px;
+        position: absolute;
+        top:0;
+        z-index: 100;
+        white-space: nowrap;
+
+    }
+
+    &__button {
+        display: block;
+        padding: 20px 75px;
+        font-family: CaviarDreams, sans-serif;
+        color: #a1a1a1;
+        border-radius: 3px;
+        border: none;
+        font-size: 16px;
+        background: linear-gradient(to right, #f2dad9, #ffffff 35%, #fff0f0);
+        position: absolute;
+        z-index: 100;
+        box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+        bottom: 75px;
+
+        &:hover {
+            color: #000000;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.wave {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    &__one {
+        background: url("/assets/img/modal-wave.png") repeat-x;
+        width: 7000px;
+        height: 218px;
+        animation: waves 20s infinite linear;
+        position: absolute;
+        top: 0;
+
+    }
+
+    &__two {
+        background: url("/assets/img/modal-wave.png") repeat-x;
+        width: 7000px;
+        height: 218px;
+        animation: waves 13s infinite linear;
+        opacity: 0.5;
+        position: relative;
+        top: 0;
+
+    }
+
+    &__three {
+        background: url("/assets/img/modal-wave.png") repeat-x;
+        width: 7000px;
+        height: 150px;
+        animation: waves 25s infinite linear;
+        position: absolute;
+        top: 0;
+        transform: rotate(180deg);
+
+    }
+
+    &__four {
+        background: url("/assets/img/modal-wave.png") repeat-x;
+        width: 7000px;
+        height: 150px;
+        animation: waves 15s infinite linear;
+        opacity: 0.5;
+        position: relative;
+        top: 0;
+        transform: rotate(180deg);
+
+
+    }
+}
+
+
+@keyframes waves {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -1938px;
+    }
+
+}

@@ -1,4 +1,4 @@
-.overlay {
+.overlay-header {
     position: fixed;
     left: 0;
     right: 0;
@@ -32,7 +32,7 @@
             transition: left 0.3s ease-in-out;
         }
 
-        & .overlay {
+        & .overlay-header {
             display: block;
         }
     }
