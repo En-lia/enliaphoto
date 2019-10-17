@@ -248,7 +248,7 @@ function site() {
     function createSlider(array, folder) {
         var allImg = "";
         for (var i = 0; i < array.length; i++) {
-            var img = "<img src=/assets/img/" + folder + "/" + array[i] + ">";
+            var img = "<img src=/photography/assets/img/" + folder + "/" + array[i] + ">";
             allImg += img;
         }
         sliderContainer.innerHTML = allImg;
