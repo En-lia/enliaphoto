@@ -96,6 +96,7 @@ function home() {
         request.onreadystatechange = function () {   //когда у запроса меняется состояние
             if (request.readyState === 4) {
                 if (request.status === 200) {
+                    form.reset();
                     addClass(overlayModal, 'overlay-modal_active');
                 } else if (request.status > 0) {
                     alert('Ошибка сервера!')
