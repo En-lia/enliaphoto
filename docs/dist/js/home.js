@@ -24,6 +24,9 @@ function home() {
     });
 
     var menuLinks = document.querySelectorAll('[data-anchor]');
+    var aboutMe = document.querySelector('.about-me');
+    var aboutMeContainer = document.querySelector('.about-me__container');
+
     var form = document.querySelector('.form');
     var overlayModal = document.querySelector('.overlay-modal');
     var modalButton = document.querySelector('.modal__button');
@@ -42,6 +45,19 @@ function home() {
 
     function addLink(object) {
         window.scrollTo(0, object.offsetTop - 50);
+    }
+
+    function toggleAboutMe() {
+        var windowBottom = window.scrollY + window.innerHeight;
+        var aboutMeShowLine = aboutMe.offsetTop + aboutMe.offsetHeight / 100 * 50;
+
+        if (windowBottom > aboutMeShowLine && window.scrollY < aboutMeShowLine) {
+            addClass(aboutMeContainer, 'about-me__container_active');
+        }
+
+        if (window.scrollY > aboutMeShowLine || windowBottom < aboutMeShowLine) {
+            dellClass(aboutMeContainer, 'about-me__container_active');
+        }
     }
 
     function checkInput(object) {
@@ -104,7 +120,7 @@ function home() {
         dellClass(overlayModal, 'overlay-modal_active');
     });
 
-
+    window.addEventListener('scroll', toggleAboutMe);
 }
 
 
