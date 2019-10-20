@@ -48,14 +48,14 @@ function home() {
     }
 
     function toggleAboutMe() {
-        var windowBottom = window.scrollY + window.innerHeight;
+        var windowBottom = document.documentElement.scrollTop + window.innerHeight;
         var aboutMeShowLine = aboutMe.offsetTop + aboutMe.offsetHeight / 100 * 50;
 
-        if (windowBottom > aboutMeShowLine && window.scrollY < aboutMeShowLine) {
+        if (windowBottom > aboutMeShowLine && document.documentElement.scrollTop < aboutMeShowLine) {
             addClass(aboutMeContainer, 'about-me__container_active');
         }
 
-        if (window.scrollY > aboutMeShowLine || windowBottom < aboutMeShowLine) {
+        if (document.documentElement.scrollTop > aboutMeShowLine || windowBottom < aboutMeShowLine) {
             dellClass(aboutMeContainer, 'about-me__container_active');
         }
     }

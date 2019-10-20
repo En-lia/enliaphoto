@@ -36,7 +36,7 @@ function header() {
 
 
     function toggleHeader() {
-        if (window.scrollY > 5) {
+        if (document.documentElement.scrollTop > 5) {
             addClass(header, 'header_active');
         } else {
             dellClass(header, 'header_active');
