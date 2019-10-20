@@ -7,19 +7,17 @@
 
         &_active {
 
-                .about-me__avatar {
-                    background-image: url("/assets/img/about-me__avatar_active.jpg");
-                    left:0;
-                    transform: translate(0%, -50%);
-                    transition: all 0.5s ease-in-out;
-                    transition-delay: 0.9s;
-                }
-                .about-me__text {
-                    opacity: 1;
-                    transition: all 0.5s ease-in-out 0.3s;
-                    transition-delay: 0.9s;
+            .about-me__avatar {
+                background-image: url("/assets/img/about-me__avatar_active.jpg");
+                left: 0;
+                transform: translate(0%, -50%);
+                transition: all 0.5s ease-in-out;
+            }
 
-                }
+            .about-me__text {
+                opacity: 1;
+                transition: all 0.5s ease-in-out 0.3s;
+            }
 
         }
     }
@@ -30,9 +28,9 @@
         height: 200px;
         background-size: cover;
         background-position: center;
-        left:50%;
+        left: 50%;
         transform: translate(-50%, -50%);
-        top:50%;
+        top: 50%;
         transition: all 0.5s ease-in-out 0.3s;
         position: absolute;
     }
@@ -64,26 +62,26 @@
         &__container {
             &_active {
 
-                    .about-me__avatar {
-                        width: 150px;
-                        height: 150px;
-                        left:50%;
-                        transform: translate(-50%, -50%);
-                        top:75px;
-                        transition: all 0.5s ease-in-out 0.3s;
-                    }
+                .about-me__avatar {
+                    width: 150px;
+                    height: 150px;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    top: 75px;
+                    transition: all 0.5s ease-in-out 0.3s;
+                }
 
-                    .about-me__text {
-                        opacity: 1;
-                        transition: all 0.5s ease-in-out 0.3s;
-                    }
+                .about-me__text {
+                    opacity: 1;
+                    transition: all 0.5s ease-in-out 0.3s;
+                }
 
             }
         }
 
         &__text {
             padding-left: 0;
-            padding-top:150px;
+            padding-top: 150px;
         }
 
 
